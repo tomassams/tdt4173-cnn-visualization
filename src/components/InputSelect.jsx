@@ -1,4 +1,4 @@
-import { AspectRatio, Heading, Image, SimpleGrid } from '@chakra-ui/react'
+import { AspectRatio, Image, SimpleGrid } from '@chakra-ui/react'
 import React from 'react'
 
 export const InputSelect = ({ onSelect, inputImages }) => {
