@@ -10,7 +10,7 @@ export const OutputLayer = ({ shape, outputs, labels }) => {
             <SimpleGrid columns={8}>
                 {outputs.map((color, index) => {
                     return (
-                        <AspectRatio ratio={1} width="50" color="white" bg={color}>
+                        <AspectRatio key={index} ratio={1} width="50" color="white" bg={color}>
                             <Box p={4} fontWeight="bold">
                                 {labels[index]}
                             </Box>

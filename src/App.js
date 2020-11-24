@@ -251,7 +251,7 @@ function App() {
       <Box>
       <ColorMap image={ require("./img/colormap.png").default }/>
 
-      <InputLayer shape="(1, 256, 256, 3)" images={ inputImages[selected.id].layers[0] }  />
+      <InputLayer title={`input: ${selected.name}`} shape="(1, 256, 256, 3)" images={ inputImages[selected.id].layers[0] }  />
 
       <Stack>
 
