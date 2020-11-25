@@ -29,16 +29,21 @@ function App() {
       
       <Stack spacing={4} maxW="50%" mx="auto" my={4} textAlign="left">
         <Text>
-            This website illustrates how a convolutional neural network processes features in an 
-            image input. It was made for the final project in the course TDT4173 Machine Learning 
-            at NTNU, and uses the CNN model from our <Link href="https://github.com/tomassams/tdt4173-machine-learning-project">project repository</Link>.
-            The dataset is the <Link href="https://datasets.simula.no/kvasir/">Kvasir dataset v2</Link> and contains 8000 images from the gastrointestinal 
-            tract split into eight class labels representing anatomical landmarks, pathological findings
-            or endoscopic features. For simplicity, we have picked one image from each class to visualize 
-            predictions on this page.
+          This website illustrates how a convolutional neural network process features in an image input. 
+          It was made for the final project in the course TDT4173 Machine Learning at NTNU, and it uses 
+          the CNN model from our <Link href="https://github.com/tomassams/tdt4173-machine-learning-project">
+          project repository</Link>. The dataset is the <Link href="https://datasets.simula.no/kvasir/">
+          Kvasir dataset v2</Link> and contains 8000 images from the gastrointestinal tract split into eight 
+          class labels representing anatomical landmarks, pathological findings, or endoscopic features.
         </Text>
         <Text>
-          Made with the help of <Link href="https://github.com/facebook/create-react-app">Create React App</Link> and <Link href="https://github.com/philipperemy/keract">Keract</Link>
+          For clarity purposes, we have picked one image from each class to visualize predictions on this 
+          page, and we decided to visualize the CNN instead of the ResNet50 we trained due to the large
+          number of network layers in the ResNet compared to the CNN.
+        </Text>
+        <Text>
+          Made with the help of <Link href="https://github.com/facebook/create-react-app">Create React App </Link> 
+          and <Link href="https://github.com/philipperemy/keract">Keract</Link>
         </Text>
 
         {selected ? <Text>Selected: {selected.name}</Text> : <Text>Please select an image to view activations</Text> }
