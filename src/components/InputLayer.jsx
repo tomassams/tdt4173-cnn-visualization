@@ -1,4 +1,4 @@
-import { AspectRatio, Box, Heading, Image, SimpleGrid, Text } from '@chakra-ui/react';
+import { AspectRatio, Heading, Image, SimpleGrid, Stack, Text } from '@chakra-ui/react';
 import { AnimatePresence, motion } from 'framer-motion';
 import React from 'react'
 
@@ -10,8 +10,8 @@ export const InputLayer = ({ title, images, shape, ...rest }) => {
                 animate={{ opacity: 1}}
                 exit={{ opacity: 0}}
             >
-        <Box>
-            <Heading py={4}>{title}</Heading>
+        <Stack spacing={4}>
+            <Heading>{title}</Heading>
             <Text>{shape}</Text>
             <SimpleGrid columns={3} spacing={4}>
                 {images.map((i, index) => {
@@ -22,7 +22,7 @@ export const InputLayer = ({ title, images, shape, ...rest }) => {
                     )
                 })}
             </SimpleGrid>
-        </Box>
+        </Stack>
         </motion.div>
         </AnimatePresence>
     );
