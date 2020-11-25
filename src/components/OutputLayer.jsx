@@ -1,10 +1,10 @@
-import { AspectRatio, Box, Heading, SimpleGrid, Text } from '@chakra-ui/react';
+import { AspectRatio, Box, Heading, SimpleGrid, Stack, Text } from '@chakra-ui/react';
 import React from 'react'
 
 
 export const OutputLayer = ({ shape, outputs, labels }) => {
     return (
-        <Box>
+        <Stack spacing={4} my={4}>
             <Heading as="h3">Dense</Heading>
             <Text>{shape}</Text>
             <SimpleGrid columns={8}>
@@ -18,6 +18,6 @@ export const OutputLayer = ({ shape, outputs, labels }) => {
                     )
                 })}
             </SimpleGrid>
-        </Box>
+        </Stack>
     );
 }
