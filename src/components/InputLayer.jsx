@@ -5,7 +5,6 @@ import React from 'react'
 export const InputLayer = ({ title, images, shape, ...rest }) => {
     return (
         <AnimatePresence>
-
             <motion.div
                 initial={{ opacity: 0}}
                 animate={{ opacity: 1}}

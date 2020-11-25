@@ -1,5 +1,5 @@
-import { Box, Heading, Stack, Text } from '@chakra-ui/react';
-import { useState } from 'react';
+import { Box, Heading, Link, Stack, Text } from '@chakra-ui/react';
+import { useEffect, useRef, useState } from 'react';
 import './App.css';
 import { ColorMap } from './components/ColorMap';
 import { InputLayer } from './components/InputLayer';
@@ -238,14 +238,39 @@ function App() {
   const [inputImages] = useState(initialInputImages);
   const [selected, setSelected] = useState(null)
 
+  const inputSelectRef = useRef(null)
+  const executeScroll = () => inputSelectRef.current.scrollIntoView()
+
+  useEffect(() => {
+    executeScroll()
+  }, [selected])
+
   return (
-    <Box m="auto" py={4} maxW={[ "100%", "100%", "80%", "1100px" ]} className="App">
+    <Box textAlign="center" m="auto" py={4} maxW={[ "100%", "100%", "80%", "1100px" ]} className="App">
       
       <Heading as="h1" py={4}>CNN Activation Maps</Heading>
+      
+      <Stack spacing={4} maxW="50%" mx="auto" my={4} textAlign="left">
+        <Text>
+            This website illustrates how a convolutional neural network processes features in an 
+            image input. It was made for the final project in the course TDT4173 Machine Learning 
+            at NTNU, and uses the CNN model from our <Link href="https://github.com/tomassams/tdt4173-machine-learning-project">project repository</Link>.
+          The dataset is the <Link href="https://datasets.simula.no/kvasir/">Kvasir dataset v2</Link> and contains 8000 images from the gastrointestinal 
+          tract split into eight class labels representing anatomical landmarks, pathological findings
+          or endoscopic features. For simplicity, we have picked one image from each class to visualize 
+          predictions on this page.
+        </Text>
+        <Text>
+          Activation maps were extracted with <Link href="https://github.com/philipperemy/keract">Keract</Link>
+        </Text>
 
-      {selected ? <Text>Selected: {selected.name}</Text> : <Text>Please select an image</Text> }
-
-      <InputSelect onSelect={setSelected} inputImages={inputImages} />
+        {selected ? <Text>Selected: {selected.name}</Text> : <Text>Please select an image to view activations</Text> }
+      </Stack>
+      
+      <div ref={inputSelectRef}>
+        <InputSelect onSelect={setSelected} inputImages={inputImages} />
+      </div>
+      
 
       {selected && 
       <Box>

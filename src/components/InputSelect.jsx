@@ -27,8 +27,9 @@ export const InputSelect = ({ onSelect, inputImages, ...rest}) => {
                         <motion.div
                             key={i.id} 
                             whileTap={{ scale: 1 }} 
-                            whileHover={{ scale: 1.05 }}>
+                            whileHover={{ scale: 1.02 }}>
                             <AspectRatio 
+                                _hover={{ cursor: 'pointer' }}
                                 border={selected && selected.id === i.id ? '5px solid red' : ''} 
                                 ratio={1} 
                                 onClick={() => clickHandler(i)}
