@@ -1,4 +1,4 @@
-import { Box, Image, Stack, Text } from "@chakra-ui/react";
+import { Box, Center, Image, Spinner, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 
 export const ColorMap = ({ image }) => {
@@ -14,7 +14,7 @@ export const ColorMap = ({ image }) => {
                 activations.
             </Text>
             <Box>
-                <Image w="100%" src={image} />
+                <Image w="100%" src={image} fallback={<Center><Spinner/></Center>}/>
             </Box>
             <Stack direction="row" justify="space-between">
                 <Text>Low</Text>

@@ -1,8 +1,10 @@
 import {
     AspectRatio,
+    Center,
     Heading,
     Image,
     SimpleGrid,
+    Spinner,
     Stack,
     Text,
 } from "@chakra-ui/react";
@@ -24,7 +26,7 @@ export const InputLayer = ({ title, images, shape, ...rest }) => {
                         {images.map((i, index) => {
                             return (
                                 <AspectRatio key={index} ratio={1}>
-                                    <Image src={i.default} />
+                                    <Image src={i.default} fallback={<Center><Spinner /></Center>} />
                                 </AspectRatio>
                             );
                         })}

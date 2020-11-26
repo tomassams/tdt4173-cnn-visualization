@@ -1,4 +1,4 @@
-import { AspectRatio, Image, SimpleGrid } from "@chakra-ui/react";
+import { AspectRatio, Center, Image, SimpleGrid, Spinner } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FadeIn } from "./FadeIn";
@@ -36,7 +36,7 @@ export const InputSelect = ({ onSelect, inputImages, ...rest }) => {
                                 ratio={1}
                                 onClick={() => clickHandler(i)}
                             >
-                                <Image src={i.inputImage.default} />
+                                <Image src={i.inputImage.default} fallback={<Center><Spinner /></Center>} />
                             </AspectRatio>
                         </motion.div>
                     ))}
