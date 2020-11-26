@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  padding-top: 60px;
 }
 
 body {
@@ -17,4 +18,13 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.is-current {
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+}
+
+.chakra-link {
+  color: #61dafb!important;
 }
